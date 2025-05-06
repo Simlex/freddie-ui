@@ -5,17 +5,17 @@ export class ApiRoutes {
   /**
    * The dev base url for the application
    */
-  //   static BASE_URL_DEV: string = "http://localhost:3050/";
+  //   static BASE_URL_DEV: string = "http://localhost:9015/";
 
   /**
    * The test base url for the application
    */
-  static BASE_URL_TEST: string = "https://apitest.dimlang.com/";
+  static BASE_URL_TEST: string = "https://apitest.freddie.com/";
 
   /**
    * The live base url for the application
    */
-  static BASE_URL_LIVE: string = "https://api.dimlang.com/api/v1";
+  static BASE_URL_LIVE: string = "https://api.freddie.com/";
 
   /**
    * The base url being used for the application
@@ -23,7 +23,7 @@ export class ApiRoutes {
   static BASE_URL: string = ApiRoutes.BASE_URL_LIVE;
 
   /**
-   * The route to Waitlist Subscription endpoint
+   * The route to Fetch All Managers endpoint
    */
-  static WaitlistSubscription: string = "/waitlist";
+  static FetchAllManagers: string = "/managers";
 }

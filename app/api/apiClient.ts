@@ -1,6 +1,5 @@
 import axios from "axios";
 import { ApiRoutes } from "./apiRoutes";
-import { WaitlistSubscriptionRequest } from "../model/IWaitlist";
 
 export const API = axios.create({
   baseURL: ApiRoutes.BASE_URL,
@@ -16,10 +15,10 @@ export const getApiConfig = (token: string) => {
   };
 };
 
-export function useSubscribeToWaitlist() {
-  async function subscribeToWaitlist(data: WaitlistSubscriptionRequest) {
-    return API.post(ApiRoutes.WaitlistSubscription, data, getApiConfig(""));
+export function useFetchAllManagers() {
+  async function FetchAllManagers(data: any) {
+    return API.post(ApiRoutes.FetchAllManagers, data, getApiConfig(""));
   }
 
-  return subscribeToWaitlist;
+  return FetchAllManagers;
 }

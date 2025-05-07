@@ -73,7 +73,7 @@ export function UpdateManagerModal({
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -84,7 +84,7 @@ export function UpdateManagerModal({
     setIsUpdatingManager(true);
 
     try {
-      updateManager(formData).then((response) => {
+      await updateManager(formData).then((response) => {
         console.log("🚀 ~ updateManager ~ response:", response);
         toast.success("Manager updated successfully!");
 
@@ -92,7 +92,7 @@ export function UpdateManagerModal({
         setManagers((prev) =>
           prev.map((m) => (m.id === formData.id ? { ...m, ...formData } : m))
         );
-        
+
         // Reset form and close modal
         setFormData({
           fullName: "",

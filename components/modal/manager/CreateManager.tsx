@@ -60,7 +60,7 @@ export function CreateManagerModal({
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -71,7 +71,7 @@ export function CreateManagerModal({
     setIsCreatingManager(true);
 
     try {
-      createManager(formData).then(() => {
+      await createManager(formData).then(() => {
         toast.success("Manager created successfully!");
 
         // Reset form and close modal

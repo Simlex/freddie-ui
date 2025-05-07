@@ -15,7 +15,7 @@ export class ApiRoutes {
   /**
    * The live base url for the application
    */
-  static BASE_URL_LIVE: string = "https://api.freddie.com/";
+  static BASE_URL_LIVE: string = "https://api-freddie.ai-wk.com/";
 
   /**
    * The base url being used for the application
@@ -23,7 +23,7 @@ export class ApiRoutes {
   static BASE_URL: string = ApiRoutes.BASE_URL_LIVE;
 
   /**
-   * The route to Fetch All Managers endpoint
+   * The route to Managers endpoint
    */
-  static FetchAllManagers: string = "/managers";
+  static Managers: string = "/managers";
 }

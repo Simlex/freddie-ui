@@ -21,7 +21,6 @@ interface LayoutProps {
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }): ReactElement => {
-  const pathname = usePathname();
   const { offlineStatusModalVisibility, hideOfflineStatusModalVisibility } =
     useContext(ApplicationContext) as ApplicationContextData;
 

@@ -15,7 +15,7 @@ const OfflineAlert: FunctionComponent<OfflineAlertProps> = ({ visibility, setVis
             setVisibility={setVisibility} styles={{ backgroundColor: 'transparent', color: '#fff', width: "fit-content" }}
             disallowOverlayFunction
             disallowRemovalTrigger>
-            <div className="w-[20rem] max-w-[20rem] p-6 rounded-2xl bg-container-grey">
+            <div className="w-[20rem] max-w-[20rem] p-6 rounded-2xl bg-accent-foreground">
                 <div className="flex flex-row items-start justify-between mb-2">
                     <div className="flex flex-col items-start">
                         <h3 className="text-base font-semibold mb-1">Offline</h3>
@@ -33,7 +33,7 @@ const OfflineAlert: FunctionComponent<OfflineAlertProps> = ({ visibility, setVis
 
                 <div className="flex justify-end mt-4 gap-2">
                     <button
-                        className="p-2 px-4 rounded-full outline-none border-none cursor-pointer mt-1 bg-white text-dark-grey text-center text-sm hover:opacity-80"
+                        className="p-2 px-4 rounded-full outline-none border-none cursor-pointer mt-1 bg-white text-foreground text-center text-sm hover:opacity-80"
                         onClick={() => setVisibility(false)}>
                         Okay, Got it.
                     </button>

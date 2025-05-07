@@ -3,16 +3,11 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
-  LayoutDashboard,
-  CalendarDays,
-  Users,
   Ticket,
-  BarChart3,
-  Settings,
-  HelpCircle,
-  LogOut,
   UsersRound,
   Key,
+  Briefcase,
+  FormInput,
 } from "lucide-react";
 import { ApplicationRoutes } from "@/constants/applicationRoutes";
 import { usePathname } from "next/navigation";
@@ -47,69 +42,31 @@ export default function Sidebar({ className }: SidebarProps) {
             </Link>
             <Link href={ApplicationRoutes.Identities}>
               <Button
-                variant={pathname == "" ? "default" : "ghost"}
+                variant={pathname == ApplicationRoutes.Identities ? "default" : "ghost"}
                 className="w-full justify-start"
               >
                 <Key className="mr-2 h-4 w-4" />
                 Identities
               </Button>
             </Link>
-            <Link href="/admin/users">
+            <Link href={ApplicationRoutes.Jobs}>
               <Button
-                variant={pathname == "" ? "default" : "ghost"}
+                variant={pathname == ApplicationRoutes.Jobs ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                <Users className="mr-2 h-4 w-4" />
-                Users
+                <Briefcase className="mr-2 h-4 w-4" />
+                Jobs
               </Button>
             </Link>
-            <Link href="/admin/tickets">
+            <Link href={ApplicationRoutes.FormTemplates}>
               <Button
-                variant={pathname == "" ? "default" : "ghost"}
+                variant={pathname == ApplicationRoutes.FormTemplates ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                <Ticket className="mr-2 h-4 w-4" />
-                Tickets
+                <FormInput className="mr-2 h-4 w-4" />
+                Form Templates
               </Button>
             </Link>
-            <Link href="/admin/analytics">
-              <Button
-                variant={pathname == "" ? "default" : "ghost"}
-                className="w-full justify-start"
-              >
-                <BarChart3 className="mr-2 h-4 w-4" />
-                Analytics
-              </Button>
-            </Link>
-            <Link href="/admin/settings">
-              <Button
-                variant={pathname == "" ? "default" : "ghost"}
-                className="w-full justify-start"
-              >
-                <Settings className="mr-2 h-4 w-4" />
-                Settings
-              </Button>
-            </Link>
-          </div>
-        </div>
-        <div className="px-3 mt-auto">
-          <div className="space-y-1">
-            <Link href="/admin/help">
-              <Button
-                variant={pathname == "" ? "default" : "ghost"}
-                className="w-full justify-start"
-              >
-                <HelpCircle className="mr-2 h-4 w-4" />
-                Help & Support
-              </Button>
-            </Link>
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-red-500"
-            >
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
-            </Button>
           </div>
         </div>
       </div>

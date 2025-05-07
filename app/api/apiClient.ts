@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiRoutes } from "./apiRoutes";
-import { Manager, ManagerCreate, ManagerUpdate } from "@/models/IManager";
+import { Manager, ManagerCreate, ManagerIdentity, ManagerUpdate } from "@/models/IManager";
+import { Identity, IdentityCreate } from "@/models/IIdentity";
 
 export const API = axios.create({
   baseURL: ApiRoutes.BASE_URL,
@@ -80,4 +81,34 @@ export function useDeleteManager() {
   }
 
   return DeleteManager;
+}
+
+export function useCreateManagerIdentity() {
+  async function CreateManagerIdentity(
+    managerId: string,
+    data: IdentityCreate
+  ): Promise<void> {
+    await API.post<Identity>(
+      `${ApiRoutes.Managers}/${managerId}/identities`,
+      data,
+      getApiConfig("")
+    );
+  }
+
+  return CreateManagerIdentity;
+}
+
+export function useFetchAllManagerIdentities() {
+  async function FetchAllManagerIdentities(
+    managerId: string
+  ): Promise<ManagerIdentity> {
+    const response: AxiosResponse<ManagerIdentity> = await API.get<ManagerIdentity>(
+      `${ApiRoutes.Managers}/${managerId}/identities`,
+      getApiConfig("")
+    );
+
+    return response.data;
+  }
+
+  return FetchAllManagerIdentities;
 }
